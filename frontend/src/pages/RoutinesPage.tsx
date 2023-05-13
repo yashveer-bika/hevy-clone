@@ -1,7 +1,6 @@
 import { Box } from "@chakra-ui/react";
 import { useState } from "react";
 import RoutineCellGeneric from "../components/RoutineCellGeneric";
-import RoutineCell from "../components/RoutineCellGeneric";
 
 // TODO: fill out the RoutinesPage
 export default function RoutinesPage() {
