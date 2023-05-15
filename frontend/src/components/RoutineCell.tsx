@@ -2,7 +2,7 @@ import { useState } from 'react';
 import { Box, IconButton, Input, Link } from '@chakra-ui/react';
 import { CloseIcon, CopyIcon, EditIcon, CheckIcon } from '@chakra-ui/icons';
 
-const RoutineCellGeneric = ({ routineLink, index, name, onDelete, onDuplicate, onNameChange } : any) => {
+const RoutineCell = ({ routineLink, index, name, onDelete, onDuplicate, onNameChange } : any) => {
   const [isEditing, setIsEditing] = useState(false);
   const [editedName, setEditedName] = useState(name);
 
@@ -92,4 +92,4 @@ const RoutineCellGeneric = ({ routineLink, index, name, onDelete, onDuplicate, o
   );
 };
 
-export default RoutineCellGeneric;
+export default RoutineCell;
