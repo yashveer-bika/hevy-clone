@@ -19,6 +19,10 @@ export default function CreateRoutine() {
         {
             name: "21s bicep curls", 
             imgPath: testImage
+        }, 
+        {
+            name: "21s bicep curls", 
+            imgPath: testImage
         }
     ]);
     // setActiveExercises(

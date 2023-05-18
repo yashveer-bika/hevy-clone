@@ -15,6 +15,8 @@ export default function CreateRoutineRow({exercise} : any) {
 
     const [notes, setNotes] = useState("");
 
+    const [deleted, setDeleted] = useState(false);
+
 
     function handleMenuToggle() {
 
@@ -30,6 +32,9 @@ export default function CreateRoutineRow({exercise} : any) {
 
 
     return (
+        
+        
+        
         <Box className="container">
             <Box className="header-container">
                 <Box className="image-title-container">

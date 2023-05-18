@@ -93,7 +93,7 @@ export default function RoutinesPage() {
     
     // new folder pieces
 
-    const [isAddFolderModalOpen, setIsAddFolderModalOpen] = useState(false);
+  const [isAddFolderModalOpen, setIsAddFolderModalOpen] = useState(false);
   const [newFolderName, setNewFolderName] = useState('');
 
   const handleAddFolderClick = () => {

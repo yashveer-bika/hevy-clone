@@ -11,36 +11,26 @@ interface Row {
 export default function SetRepTable () {
   const [rows, setRows] = useState<Row[]>([]);
 
-    // useEffect(() => {
-    //     updateRowIndices();
-    // }, [rows]);
-
-    // const updateRowIndices = () => {
-    //     const updatedRows = rows.map((row, index) => ({
-    //     ...row,
-    //     set: index + 1,
-    //     }));
-    //     setRows(updatedRows);
-    // };
-
-    // const updateRowIndices = useCallback(() => {
-    //     setRows((prevRows) =>
-    //       prevRows.map((row, index) => ({
-    //         ...row,
-    //         set: index + 1,
-    //       }))
-    //     );
-    //   }, []);
-    
-    //   useEffect(() => {
-    //     updateRowIndices();
-    //   }, [updateRowIndices]);
+    const updateRowIndices = useCallback(() => {
+        setRows((prevRows) =>
+          prevRows.map((row, index) => ({
+            ...row,
+            set: index + 1,
+          }))
+        );
+      }, []);
 
   const handleRowChange = (index : number, field : string, value : string) => {
     const updatedRows = [...rows];
-    // updatedRows[index][field] = value;
-    console.log(updatedRows);
-    console.log(updatedRows[index]);
+    if (field == "lbs")  {
+        updatedRows[index][field] = value;
+    } else if (field == "reps") {
+        updatedRows[index][field] = value;
+    } else {
+        console.log("ERROR: invalid update of set/rep table");
+    }
+    // console.log(updatedRows);
+    // console.log(updatedRows[index]);
 
     setRows(updatedRows);
   };
@@ -58,6 +48,7 @@ export default function SetRepTable () {
     const updatedRows = [...rows];
     updatedRows.splice(index, 1);
     setRows(updatedRows);
+    updateRowIndices();
     
 };
 

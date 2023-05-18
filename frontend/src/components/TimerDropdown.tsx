@@ -11,7 +11,7 @@ const TimerDropdown = () => {
   const options = Array.from({ length: 60 }).map((_, index) => {
     const seconds = (index + 1) * 5;
     return {
-      label: `${seconds} seconds`,
+      label: `${seconds}s`,
       value: seconds,
     };
   });
