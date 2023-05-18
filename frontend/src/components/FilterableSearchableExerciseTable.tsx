@@ -3,6 +3,7 @@ import { useState } from "react";
 import ExerciseRow from "./ExerciseRow";
 import SearchBar from "./SearchBar";
 import "../styles/FilterableSearchableExerciseTable.css"
+import DropdownFilter from "./DropdownFilter";
 
 interface Exercise {
     id: number
@@ -22,144 +23,150 @@ const exercises = [
     },
     {
         id: 2,
-        name: "Cable Pressdown",
+        name: "Machine Pressdown",
         imgPath: "",
         muscle: "Triceps",
-        equipment: "Cable"
+        equipment: "Machine"
     },
     {
         id: 3,
-        name: "21s Biceps Curls",
+        name: "Incline Biceps Curls",
         imgPath: "",
         muscle: "Biceps",
         equipment: "Dumbbell"
     },
     {
         id: 4,
-        name: "Cable Pressdown",
+        name: "Triceps Kickbacks",
         imgPath: "",
         muscle: "Triceps",
-        equipment: "Cable"
-    },
-    {
-        id: 5,
-        name: "21s Biceps Curls",
-        imgPath: "",
-        muscle: "Biceps",
         equipment: "Dumbbell"
     },
-    {
-        id: 6,
-        name: "Cable Pressdown",
-        imgPath: "",
-        muscle: "Triceps",
-        equipment: "Cable"
-    },
-    {
-        id: 7,
-        name: "21s Biceps Curls",
-        imgPath: "",
-        muscle: "Biceps",
-        equipment: "Dumbbell"
-    },
-    {
-        id: 8,
-        name: "Cable Pressdown",
-        imgPath: "",
-        muscle: "Triceps",
-        equipment: "Cable"
-    },
-    {
-        id: 9,
-        name: "21s Biceps Curls",
-        imgPath: "",
-        muscle: "Biceps",
-        equipment: "Dumbbell"
-    },
-    {
-        id: 10,
-        name: "Cable Pressdown",
-        imgPath: "",
-        muscle: "Triceps",
-        equipment: "Cable"
-    },
-    {
-        id: 11,
-        name: "21s Biceps Curls",
-        imgPath: "",
-        muscle: "Biceps",
-        equipment: "Dumbbell"
-    },
-    {
-        id: 12,
-        name: "Cable Pressdown",
-        imgPath: "",
-        muscle: "Triceps",
-        equipment: "Cable"
-    },
-    {
-        id: 13,
-        name: "21s Biceps Curls",
-        imgPath: "",
-        muscle: "Biceps",
-        equipment: "Dumbbell"
-    },
-    {
-        id: 14,
-        name: "Cable Pressdown",
-        imgPath: "",
-        muscle: "Triceps",
-        equipment: "Cable"
-    },
-    {
-        id: 15,
-        name: "21s Biceps Curls",
-        imgPath: "",
-        muscle: "Biceps",
-        equipment: "Dumbbell"
-    },
-    {
-        id: 16,
-        name: "Cable Pressdown",
-        imgPath: "",
-        muscle: "Triceps",
-        equipment: "Cable"
-    },
+    // {
+    //     id: 5,
+    //     name: "21s Biceps Curls",
+    //     imgPath: "",
+    //     muscle: "Biceps",
+    //     equipment: "Dumbbell"
+    // },
+    // {
+    //     id: 6,
+    //     name: "Machine Pressdown",
+    //     imgPath: "",
+    //     muscle: "Triceps",
+    //     equipment: "Machine"
+    // },
+    // {
+    //     id: 7,
+    //     name: "21s Biceps Curls",
+    //     imgPath: "",
+    //     muscle: "Biceps",
+    //     equipment: "Dumbbell"
+    // },
+    // {
+    //     id: 8,
+    //     name: "Machine Pressdown",
+    //     imgPath: "",
+    //     muscle: "Triceps",
+    //     equipment: "Machine"
+    // },
+    // {
+    //     id: 9,
+    //     name: "21s Biceps Curls",
+    //     imgPath: "",
+    //     muscle: "Biceps",
+    //     equipment: "Dumbbell"
+    // },
+    // {
+    //     id: 10,
+    //     name: "Machine Pressdown",
+    //     imgPath: "",
+    //     muscle: "Triceps",
+    //     equipment: "Machine"
+    // },
+    // {
+    //     id: 11,
+    //     name: "21s Biceps Curls",
+    //     imgPath: "",
+    //     muscle: "Biceps",
+    //     equipment: "Dumbbell"
+    // },
+    // {
+    //     id: 12,
+    //     name: "Machine Pressdown",
+    //     imgPath: "",
+    //     muscle: "Triceps",
+    //     equipment: "Machine"
+    // },
+    // {
+    //     id: 13,
+    //     name: "21s Biceps Curls",
+    //     imgPath: "",
+    //     muscle: "Biceps",
+    //     equipment: "Dumbbell"
+    // },
+    // {
+    //     id: 14,
+    //     name: "Machine Pressdown",
+    //     imgPath: "",
+    //     muscle: "Triceps",
+    //     equipment: "Machine"
+    // },
+    // {
+    //     id: 15,
+    //     name: "21s Biceps Curls",
+    //     imgPath: "",
+    //     muscle: "Biceps",
+    //     equipment: "Dumbbell"
+    // },
+    // {
+    //     id: 16,
+    //     name: "Machine Pressdown",
+    //     imgPath: "",
+    //     muscle: "Triceps",
+    //     equipment: "Machine"
+    // },
 ]
 
 export default function FilterableSearchableExerciseTable() {
 
     const [activeExercises, setActiveExercises] = useState<Exercise[]>(exercises);
+    
+    const muscleOptions = ["All Muscles","Abdominal", "Abductors", "Adductors", "Biceps", "Lower Back", "Upper Back", "Cardio", "Chest", "Calves", "Forearms", "Glutes", "Hamstrings", "Lats", "Olmypic", "Quadriceps", "Shoulders", "Triceps", "Traps", "Full Body", "Other"];
+    const [muscleFilterState, setMuscleFilterState] = useState(muscleOptions[0]);
 
+    const equipmentOptions = ["All Equipment","None", "Barbell", "Dumbbell", "Kettlebell", "Machine", "Plate", "Resistance Band", "Suspension", "Other"];
+    const [equipmentFilterState, setEquipmentFilterState] = useState(equipmentOptions[0]);
 
-    function handleSearch(query : string) {
-        // TODO: dynamically filter the activeExercise blocks that can render
+    const [searchQuery, setSearchQuery] = useState("");
 
-        function searchPredicate(exercise : Exercise) {
-            // if ( exercise.name.includes(query) )  {
-            //     return true;
-            // }
-            // else if (exercise.muscle.includes(query) ) {
-            //     return true;
-            // }
-            // else if ( exercise.equipment.includes(query) ) {
-            //     return true;
-            // } else {
-            //     return false;
-            // }
-            return exercise.name.toLowerCase().includes(query.toLowerCase()) || 
-                exercise.muscle.toLowerCase().includes(query.toLowerCase()) || 
-                exercise.equipment.toLowerCase().includes(query.toLowerCase());
-        }
+    // function searchPredicate(exercise : Exercise) {
+    //     return exercise.name.toLowerCase().includes(searchQuery.toLowerCase()) || 
+    //         exercise.muscle.toLowerCase().includes(searchQuery.toLowerCase()) || 
+    //         exercise.equipment.toLowerCase().includes(searchQuery.toLowerCase());
+    // }
 
-        const tempActiveExercises = exercises.filter(searchPredicate);
-        console.log(`Query: ${query}`);
-        if (query = "") {
-            setActiveExercises(exercises);
-        } else {
-            setActiveExercises(tempActiveExercises);
-        }
-        console.log(activeExercises);
+    const filteredItems = exercises.filter((item) => {
+        const matchMuscle =
+            muscleFilterState === muscleOptions[0] || item.muscle.toLowerCase() === muscleFilterState.toLowerCase();
+        const matchEquipment =
+            equipmentFilterState === equipmentOptions[0] || item.equipment.toLowerCase() === equipmentFilterState.toLowerCase();
+        const matchSearch = item.name.toLowerCase().includes(searchQuery.toLowerCase()) || item.muscle.toLowerCase().includes(searchQuery.toLowerCase()) || item.equipment.toLowerCase().includes(searchQuery.toLowerCase()) ;
+    
+        return matchMuscle && matchEquipment && matchSearch;
+      });
+
+    
+    function handleEquipmentFilter(e : any) {
+        setEquipmentFilterState(e);
+    }
+
+    function handleMuscleFilter(e : any) {
+        setMuscleFilterState(e);
+    }
+
+    function handleSearch(e : any) {
+        setSearchQuery(e);
     }
 
     return (
@@ -168,18 +175,16 @@ export default function FilterableSearchableExerciseTable() {
 
                 <Box> <p>Filters</p> </Box> 
                 
-                <Box> <p>Equipment Filter</p> </Box> 
-                
-                <Box> <p>Muscle Filter</p> </Box> 
+                <Box> <DropdownFilter options={equipmentOptions} onFilter={handleEquipmentFilter}> </DropdownFilter> </Box> 
+
+                <Box> <DropdownFilter options={muscleOptions} onFilter={handleMuscleFilter}> </DropdownFilter> </Box> 
                 
                 <Box className="header-container"> <p>Library</p> <Button>+ Create Exercise</Button> </Box> 
                 
-                <Box> 
-                        <SearchBar onSearch={handleSearch}></SearchBar> 
-                    </Box>
+                <Box>  <SearchBar onSearch={handleSearch}></SearchBar> </Box>
 
                 <Box className="exercise-table-container">
-                    {activeExercises.map(
+                    {filteredItems.map(
                         (exercise, index) => 
                         <ExerciseRow key={index} exercise={exercise} >  </ExerciseRow>
                         )
