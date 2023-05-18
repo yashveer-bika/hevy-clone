@@ -4,6 +4,7 @@ import { useNavigate } from "react-router-dom";
 import "../styles/CreateRoutine.css"
 import testImage from "../logo192.png"
 import RoutineTable from "../components/RoutineTable";
+import FilterableSearchableExerciseTable from "../components/FilterableSearchableExerciseTable";
 
 interface Exercise {
     index: number
@@ -77,9 +78,8 @@ export default function CreateRoutine() {
 
             </Box>
 
-            <Box className="screen-right-container">
-                Filterable searchable exercise table
-            </Box>
+            <FilterableSearchableExerciseTable></FilterableSearchableExerciseTable>
+            
         </Box>
     );
 }
