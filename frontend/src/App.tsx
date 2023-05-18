@@ -9,6 +9,7 @@ import NavBar from "./NavBar";
 import Pages from "./Pages.json";
 import FeedPage from "./pages/FeedPage";
 import RoutinesPage from "./pages/RoutinesPage";
+import CreateRoutine from "./pages/CreateRoutine";
 
 function App() {
   return (
@@ -28,6 +29,7 @@ function App() {
           {/* <Route path="/" element={<Home></Home>}> </Route> */}
           <Route path="/" element={<FeedPage/>}/>
           <Route path="/routines" element={<RoutinesPage/>}/>
+          <Route path="/create-routine" element={<CreateRoutine/>}/>
           {/* <Route path="/about" element={<About />} /> */}
           {/* <Route path="/contact" element={<Contact />} /> */}
           <Route path="*" element={<NotFoundPage></NotFoundPage>}/>

@@ -1,5 +1,6 @@
 import { Box, Button, Input, Modal, ModalBody, ModalCloseButton, ModalContent, ModalFooter, ModalHeader, ModalOverlay } from "@chakra-ui/react";
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 import Folder from "../components/Folder";
 import RoutineCell from "../components/RoutineCell";
 import "../RoutinesPage.css"
@@ -125,6 +126,14 @@ export default function RoutinesPage() {
       setIsAddFolderModalOpen(false);
     }
   };
+
+  const navigate = useNavigate();
+
+  const handleNewRoutine = () => {
+    // redirect to the create-routine page
+    navigate("/create-routine");
+    
+  }
     
       return (
 
@@ -136,7 +145,7 @@ export default function RoutinesPage() {
 
             <Box className="routines-overview-screen-left-container">
               <p className="section-header">My Routines</p>
-              <Button fontWeight={"semiBold"}> New Routine </Button>
+              <Button fontWeight={"semiBold"} onClick={handleNewRoutine} > New Routine </Button>
               <Button fontWeight={"semiBold"} onClick={handleAddFolderClick} > New Folder </Button>
 
               <Modal isOpen={isAddFolderModalOpen} onClose={handleAddFolderCancel}>
