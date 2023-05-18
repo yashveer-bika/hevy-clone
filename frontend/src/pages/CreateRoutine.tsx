@@ -6,6 +6,7 @@ import testImage from "../logo192.png"
 import RoutineTable from "../components/RoutineTable";
 
 interface Exercise {
+    index: number
     name: string
     imgPath: string
 }
@@ -17,11 +18,13 @@ export default function CreateRoutine() {
 
     const [activeExercises, setActiveExercises] = useState<Exercise[]>([
         {
+            index: 1,
             name: "21s bicep curls", 
             imgPath: testImage
         }, 
         {
-            name: "21s bicep curls", 
+            index: 2,
+            name: "Cable Pressdowns", 
             imgPath: testImage
         }
     ]);

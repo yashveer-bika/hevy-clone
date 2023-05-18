@@ -11,7 +11,7 @@ interface Exercise {
     imgPath: string
 }
 
-export default function CreateRoutineRow({exercise} : any) {
+export default function CreateRoutineRow({exercise, onDeleteRow} : any) {
 
     const [notes, setNotes] = useState("");
 
@@ -27,7 +27,7 @@ export default function CreateRoutineRow({exercise} : any) {
     }
 
     function handleRemoveExercise() {
-
+        onDeleteRow();
     }
 
 
