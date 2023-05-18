@@ -29,7 +29,7 @@ const RoutineCell = ({ routineLink, index, name, onDelete, onDuplicate, onNameCh
 
   return (
     <Box
-      w="50%"
+      w="80%"
       h="75px"
       bg="gray.200"
       borderRadius="md"

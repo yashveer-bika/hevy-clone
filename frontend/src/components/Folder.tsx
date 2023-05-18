@@ -1,14 +1,16 @@
 import { useState } from 'react';
 import { Box, IconButton, Menu, MenuButton, MenuItem, MenuList, Modal, ModalOverlay, ModalContent, ModalHeader, ModalCloseButton, ModalBody, ModalFooter, Button, Input } from '@chakra-ui/react';
 import { HamburgerIcon } from '@chakra-ui/icons';
+import { Routine } from '../Types';
 
-const defaultName = "New Folder"
+// const defaultName = "New Folder"
 
-const Folder = ({ id, onAddRoutine, onDeleteFolder } : any) => {
+const Folder = ({ id, name, onAddRoutine, onDeleteFolder } : any) => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isRenameModalOpen, setIsRenameModalOpen] = useState(false);
-  const [tempFolderName, setTempFolderName] = useState(defaultName);
-  const [currentName, setCurrentName] = useState(defaultName);
+  const [tempFolderName, setTempFolderName] = useState(name);
+  const [currentName, setCurrentName] = useState(name);
+  const [routines, setRoutines] = useState<Routine[]>([]);
 
   const handleMenuToggle = () => {
     setIsMenuOpen(!isMenuOpen);
@@ -47,7 +49,7 @@ const Folder = ({ id, onAddRoutine, onDeleteFolder } : any) => {
     <Box
       w="100%"
       h="80px"
-      bg="gray.200"
+      bg="gray.100"
       borderRadius="md"
       display="flex"
       justifyContent="space-between"

@@ -31,3 +31,9 @@ export interface Comment {
     content: string;
   }
   
+
+export interface Routine {
+    id : number
+    routineName: string
+    routineLink: string
+}
