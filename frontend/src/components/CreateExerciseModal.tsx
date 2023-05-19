@@ -1,6 +1,8 @@
 import { useState } from 'react';
 import {
   Button,
+  Checkbox,
+  CheckboxGroup,
   FormControl,
   FormLabel,
   Input,
@@ -20,7 +22,7 @@ const CreateExerciseModal = ({ isOpen, onClose } : any) => {
   const [exerciseType, setExerciseType] = useState('');
   const [equipment, setEquipment] = useState('');
   const [primaryMuscleGroup, setPrimaryMuscleGroup] = useState('');
-  const [otherMuscles, setOtherMuscles] = useState<string[]>([]);
+  const [otherMuscles, setOtherMuscles] = useState<(string|number)[]>([]);
 
   function modalCloseLogic() {
       // reset all my states
@@ -109,19 +111,17 @@ const CreateExerciseModal = ({ isOpen, onClose } : any) => {
 
             <FormControl>
               <FormLabel>Other Muscles</FormLabel>
-              <Select
-                multiple
-                placeholder="Select other muscles"
-                value={otherMuscles}
-                onChange={(e) => setOtherMuscles(Array.from(e.target.selectedOptions, (option) => option.value))}
-              >
-                <option value="shoulders">Shoulders</option>
-                <option value="biceps">Biceps</option>
-                <option value="triceps">Triceps</option>
-                <option value="abs">Abs</option>
-                {/* Add more other muscle options as needed */}
-              </Select>
+              <CheckboxGroup value={otherMuscles} onChange={(vs) => setOtherMuscles(vs)}>
+                <Stack spacing={2}>
+                <Checkbox value="shoulders">Shoulders</Checkbox>
+                  <Checkbox value="biceps">Biceps</Checkbox>
+                  <Checkbox value="triceps">Triceps</Checkbox>
+                  <Checkbox value="abs">Abs</Checkbox>
+                  {/* Add more checkbox options for other muscles as needed */}
+                </Stack>
+              </CheckboxGroup>
             </FormControl>
+
           </Stack>
         </ModalBody>
         <ModalFooter>
