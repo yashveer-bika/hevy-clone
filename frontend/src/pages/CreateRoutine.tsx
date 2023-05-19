@@ -1,5 +1,5 @@
 import { Box, Button, Divider, Input } from "@chakra-ui/react";
-import { useState } from "react";
+import { useCallback, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import "../styles/CreateRoutine.css"
 import testImage from "../logo192.png"
@@ -50,6 +50,25 @@ export default function CreateRoutine() {
         navigate("/routines");
     }
 
+
+
+    const [activeExerciseRows, setActiveExerciseRows] = useState<Exercise[]>(activeExercises);
+
+    function addToActiveExerciseRows(e : Exercise) {
+        setActiveExerciseRows([...activeExerciseRows, e]);
+
+    }
+
+    const updateRowIndices = useCallback(() => {
+        setActiveExerciseRows((prevRows) =>
+          prevRows.map((row, index) => ({
+            ...row,
+            set: index + 1,
+          }))
+        );
+      }, []);
+
+
     return (
         <Box className="screen-container">
             <Box className="screen-left-container">
@@ -72,13 +91,25 @@ export default function CreateRoutine() {
                         <Divider border={"1px solid"} color="gray.400"></Divider>
 
                         {/* TODO: allow exercises to be added to here */}
-                        <RoutineTable exercises={activeExercises} ></RoutineTable>
+                        <RoutineTable 
+                            addRoutineToTable={() => {}} 
+                            rows={activeExerciseRows} 
+                            updateRowIndices={updateRowIndices} 
+                            setRows={setActiveExerciseRows} >
+
+                            </RoutineTable>
+                    
                     </Box>
                 </Box>
 
             </Box>
 
-            <FilterableSearchableExerciseTable></FilterableSearchableExerciseTable>
+            <Box className="create-routine-screen-right-container">
+                <FilterableSearchableExerciseTable addToRoutineRows={addToActiveExerciseRows} ></FilterableSearchableExerciseTable>
+
+            </Box>
+
+
             
         </Box>
     );

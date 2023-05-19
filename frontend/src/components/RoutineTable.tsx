@@ -9,19 +9,19 @@ interface Exercise {
     imgPath: string
 }
 
-export default function RoutineTable({exercises} : any) {
+export default function RoutineTable({rows, setRows, updateRowIndices, addRoutineToTable} : any) {
     // const rows = exercises.map(( (exercise : Exercise) => <CreateRoutineRow exercise={exercise} ></CreateRoutineRow>  ) ) ;
 
-    const [rows, setRows] = useState<Exercise[]>(exercises);
+    // const [rows, setRows] = useState<Exercise[]>(exercises);
 
-    const updateRowIndices = useCallback(() => {
-        setRows((prevRows) =>
-          prevRows.map((row, index) => ({
-            ...row,
-            set: index + 1,
-          }))
-        );
-      }, []);
+    // const updateRowIndices = useCallback(() => {
+    //     setRows((prevRows) =>
+    //       prevRows.map((row, index) => ({
+    //         ...row,
+    //         set: index + 1,
+    //       }))
+    //     );
+    //   }, []);
 
 
     const handleAddRow = () => {
@@ -35,10 +35,10 @@ export default function RoutineTable({exercises} : any) {
 
   const handleDeleteRow = (index : number) => {
     const updatedRows = [...rows];
-    console.log(rows);
+    // console.log(rows);
     updatedRows.splice(index, 1);
     setRows(updatedRows);
-    console.log(rows);
+    // console.log(rows);
     updateRowIndices();
     
 };

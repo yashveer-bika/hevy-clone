@@ -128,9 +128,9 @@ const exercises = [
     // },
 ]
 
-export default function FilterableSearchableExerciseTable() {
+export default function FilterableSearchableExerciseTable( {addToRoutineRows} : any ) {
 
-    const [activeExercises, setActiveExercises] = useState<Exercise[]>(exercises);
+    // const [activeExercises, setActiveExercises] = useState<Exercise[]>(exercises);
     
     const muscleOptions = ["All Muscles","Abdominal", "Abductors", "Adductors", "Biceps", "Lower Back", "Upper Back", "Cardio", "Chest", "Calves", "Forearms", "Glutes", "Hamstrings", "Lats", "Olmypic", "Quadriceps", "Shoulders", "Triceps", "Traps", "Full Body", "Other"];
     const [muscleFilterState, setMuscleFilterState] = useState(muscleOptions[0]);
@@ -186,7 +186,7 @@ export default function FilterableSearchableExerciseTable() {
                 <Box className="exercise-table-container">
                     {filteredItems.map(
                         (exercise, index) => 
-                        <ExerciseRow key={index} exercise={exercise} >  </ExerciseRow>
+                        <ExerciseRow key={index} exercise={exercise} addToRoutine={(e : Exercise) => addToRoutineRows(e) } >  </ExerciseRow>
                         )
                     }
                 </Box>
