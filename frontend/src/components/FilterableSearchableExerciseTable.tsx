@@ -4,6 +4,7 @@ import ExerciseRow from "./ExerciseRow";
 import SearchBar from "./SearchBar";
 import "../styles/FilterableSearchableExerciseTable.css"
 import DropdownFilter from "./DropdownFilter";
+import CreateExerciseModal from "./CreateExerciseModal";
 
 interface Exercise {
     id: number
@@ -169,6 +170,18 @@ export default function FilterableSearchableExerciseTable( {addToRoutineRows} : 
         setSearchQuery(e);
     }
 
+    const [openModal, setOpenModal] = useState(false);
+
+    function handleCloseModal() {
+        setOpenModal(false);
+    }
+
+    function handleCreateExercise() {
+        // TODO: add the new exercise to the database via API
+        // Q: do I need to trigger a re-read for all places that called the API earlier?
+        setOpenModal(true);
+    }
+
     return (
         <Box className="filterable-searchable-exercise-table-container">
             <Box className="filterable-searchable-exercise-table-inner-container">
@@ -179,8 +192,10 @@ export default function FilterableSearchableExerciseTable( {addToRoutineRows} : 
 
                 <Box> <DropdownFilter options={muscleOptions} onFilter={handleMuscleFilter}> </DropdownFilter> </Box> 
                 
-                <Box className="header-container"> <p>Library</p> <Button>+ Create Exercise</Button> </Box> 
-                
+                <Box className="header-container"> <p>Library</p> <Button onClick={handleCreateExercise}>+ Create Exercise</Button> </Box> 
+
+                <CreateExerciseModal isOpen={openModal} onClose={handleCloseModal} ></CreateExerciseModal>
+
                 <Box>  <SearchBar onSearch={handleSearch}></SearchBar> </Box>
 
                 <Box className="exercise-table-container">
