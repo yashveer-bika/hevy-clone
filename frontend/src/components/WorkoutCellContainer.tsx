@@ -1,4 +1,4 @@
-import { AlertDialog, Avatar, Box, Button, Divider, Flex, Image, LinkBox, LinkOverlay } from "@chakra-ui/react"
+import { Avatar, Box, Button, Divider, Flex, Image } from "@chakra-ui/react"
 import { Container } from '@chakra-ui/react'
 import {Post} from "../Types"
 import { Link } from '@chakra-ui/react'

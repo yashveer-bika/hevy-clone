@@ -1,8 +1,8 @@
-import React, { useState, useEffect } from "react";
+import { useEffect } from "react";
 import UserSearchBar from "../components/UserSearchBar";
 import WorkoutCellContainer from "../components/WorkoutCellContainer";
 import "../FeedPage.css";
-import {Post, SuggestedUser} from "../Types";
+import { Post } from "../Types";
 
 const sample_posts: Post[] = [
   {
@@ -24,28 +24,28 @@ const sample_posts: Post[] = [
   // Add more posts here
 ];
 
-const sampleSuggestedUsers: SuggestedUser[] = [
-  {
-    id: 1,
-    username: 'coolusername',
-    name: 'I love to code and learn new things!',
-    avatar: 'https://example.com/avatar.png',
-  },
-  // {
-  //   id: 2,
-  //   username: 'anotheruser',
-  //   name: 'Just a regular person living life',
-  //   avatar: 'https://example.com/avatar2.png',
-  // },
-  // Add more suggested users here
-];
+// const sampleSuggestedUsers: SuggestedUser[] = [
+//   {
+//     id: 1,
+//     username: 'coolusername',
+//     name: 'I love to code and learn new things!',
+//     avatar: 'https://example.com/avatar.png',
+//   },
+//   // {
+//   //   id: 2,
+//   //   username: 'anotheruser',
+//   //   name: 'Just a regular person living life',
+//   //   avatar: 'https://example.com/avatar2.png',
+//   // },
+//   // Add more suggested users here
+// ];
 
 
 function FeedPage() {
   // const [posts, setPosts] = useState<Posts>([]);
   // const [suggestedUsers, setSuggestedUsers] = useState<SuggestedUsers>([]);
   const posts = sample_posts;
-  const suggestedUsers = sampleSuggestedUsers;
+  // const suggestedUsers = sampleSuggestedUsers;
   // console.log(posts);
   // console.log(suggestedUsers);
 
