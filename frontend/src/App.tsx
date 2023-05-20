@@ -29,7 +29,8 @@ function App() {
           {/* <Route path="/" element={<Home></Home>}> </Route> */}
           <Route path="/" element={<FeedPage/>}/>
           <Route path="/routines" element={<RoutinesPage/>}/>
-          <Route path="/create-routine" element={<CreateRoutine/>}/>
+          <Route path="/create-routine" element={<CreateRoutine editMode={false}/>}/>
+          <Route path="/edit-routine/:id" element={<CreateRoutine editMode={true}/>} />
           {/* <Route path="/about" element={<About />} /> */}
           {/* <Route path="/contact" element={<Contact />} /> */}
           <Route path="*" element={<NotFoundPage></NotFoundPage>}/>

@@ -12,7 +12,9 @@ interface Exercise {
     imgPath: string
 }
 
-export default function CreateRoutine() {
+export default function CreateRoutine({editMode, id} : any) {
+    // TODO: setup something to get my routine id
+
     const navigate = useNavigate();
 
     const [routineTitle, setRoutineTitle] = useState("");
@@ -73,8 +75,8 @@ export default function CreateRoutine() {
         <Box className="screen-container">
             <Box className="screen-left-container">
                 <Box className="header">
-                    <p> Create Routine </p>
-                    <Button onClick={handleSaveRoutine} colorScheme='blue' width={"30%"} >Save Routine</Button>
+                    <p> {editMode ? "Edit Routine" : "Create Routine"} </p>
+                    <Button onClick={handleSaveRoutine} colorScheme='blue' width={"30%"} > {editMode ? "Update Routine" : "Save Routine"}</Button>
                 </Box>
 
                 <Box className="routine-table-w-title-container">
