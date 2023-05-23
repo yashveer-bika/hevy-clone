@@ -12,8 +12,10 @@
     display: flex;
     flex-direction: column;
     gap: 20px;
-    border: 5px black solid;
+    border: 1px rgba(128, 128, 128, 0.25) solid;
+    border-radius: 2%;
     width: 40vw;
+    min-height: 90vh;
 }
 
 .routine-title {
@@ -32,10 +34,37 @@
 
 }
 
-.exercise-in-routine-view-container {
+.exercise-in-routine-view-container-NaN {
     display: flex;
     gap: 10px;
     align-items: center;
+    margin: 10px;
+    min-height: 10vh;
+}
+
+.exercise-in-routine-view-container-0 {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    margin: 10px;
+    min-height: 10vh;
+    border-left: 5px green solid;
+}
+
+.exercise-in-routine-view-container-1 {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    margin: 10px;
+    min-height: 10vh;
+    border-left: 5px purple solid;
+}
+
+
+.routine-view-exercise-info-container {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
 }
 
 .routine-view-exercise-name {
@@ -54,6 +83,14 @@
 
 .exercise-rest-container {
     border: 1px black solid;
+}
+
+.exercise-rep-range-container {
+    border: 1px black solid;
+}
+
+.routine-view-exercise-notes {
+    color: grey;
 }
 
 .routine-view-right-container {

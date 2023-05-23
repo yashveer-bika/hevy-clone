@@ -6,6 +6,8 @@ interface Exercise {
     supersetId?: number
     name: string,
     sets: number,
+    minReps: number,
+    maxReps: number,
     rest?: number, // in seconds
     notes?: string
 }
@@ -18,25 +20,35 @@ export default function RoutineViewTable() {
             id: 1,
             name: "Back Squat", 
             sets: 5,
+            minReps: 4,
+            maxReps: 6,
             rest: 120,
+            notes: "Push hard, legs always suck"
         },
         {
             id: 2,
             name: "Bench Press", 
             sets: 5,
+            minReps: 4,
+            maxReps: 6,
             rest: 120,
         },
         {
             id: 3,
             name: "Bent Over Row", 
             sets: 5,
+            minReps: 4,
+            maxReps: 6,
             rest: 120,
+            notes: "brace hard and pull"
         },
         {
             id: 4,
             supersetId: 1,
             name: "DB Hammer Curl", 
             sets: 3,
+            minReps: 6,
+            maxReps: 12,
             rest: 30,
         },
         {
@@ -44,6 +56,8 @@ export default function RoutineViewTable() {
             supersetId: 1,
             name: "Triceps Extension", 
             sets: 3,
+            minReps: 6,
+            maxReps: 12,
             rest: 30,
         },
     ]
@@ -53,8 +67,8 @@ export default function RoutineViewTable() {
             {
                 exercises.map(
                     e => 
-                        <Box>
-                            <ExerciseRoutineView exercise={e}> </ExerciseRoutineView>
+                        <Box key={e.id}>
+                            <ExerciseRoutineView key={e.id} exercise={e}> </ExerciseRoutineView>
                             <Divider></Divider>
                         </Box>
                 )

@@ -4,6 +4,8 @@ import "../styles/RoutineViewPage.css"
 
 export default function RoutineViewPage() {
 
+    // TODO: get routine object based on routine id???
+    //       set up data get, set, update
     const username = "INSERT USERNAME HERE"
 
     function editRoutine() {
