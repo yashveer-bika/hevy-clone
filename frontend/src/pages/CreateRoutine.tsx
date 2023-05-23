@@ -14,6 +14,7 @@ interface Exercise {
 
 export default function CreateRoutine({editMode, id} : any) {
     // TODO: setup something to get my routine id
+    //       - edit mode logic for updating the routine
 
     const navigate = useNavigate();
 

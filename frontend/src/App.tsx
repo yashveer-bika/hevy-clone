@@ -32,7 +32,7 @@ function App() {
           <Route path="/routines" element={<RoutinesPage/>}/>
           <Route path="/create-routine" element={<CreateRoutine editMode={false}/>}/>
           <Route path="/routine-view" element={<RoutineViewPage/>}/>
-          {/* <Route path="/edit-routine/:id" element={<CreateRoutine editMode={true}/>} /> */}
+          <Route path="/edit-routine/:id" element={<CreateRoutine editMode={true}/>} />
           {/* <Route path="/about" element={<About />} /> */}
           {/* <Route path="/contact" element={<Contact />} /> */}
           <Route path="*" element={<NotFoundPage></NotFoundPage>}/>
