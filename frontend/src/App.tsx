@@ -10,6 +10,7 @@ import Pages from "./Pages.json";
 import FeedPage from "./pages/FeedPage";
 import RoutinesPage from "./pages/RoutinesPage";
 import CreateRoutine from "./pages/CreateRoutine";
+import RoutineViewPage from "./pages/RoutineViewPage";
 
 function App() {
   return (
@@ -30,7 +31,8 @@ function App() {
           <Route path="/" element={<FeedPage/>}/>
           <Route path="/routines" element={<RoutinesPage/>}/>
           <Route path="/create-routine" element={<CreateRoutine editMode={false}/>}/>
-          <Route path="/edit-routine/:id" element={<CreateRoutine editMode={true}/>} />
+          <Route path="/routine-view" element={<RoutineViewPage/>}/>
+          {/* <Route path="/edit-routine/:id" element={<CreateRoutine editMode={true}/>} /> */}
           {/* <Route path="/about" element={<About />} /> */}
           {/* <Route path="/contact" element={<Contact />} /> */}
           <Route path="*" element={<NotFoundPage></NotFoundPage>}/>
