@@ -1,0 +1,7 @@
+
+.plot-container {
+    display: flex;
+    border: 1px grey solid;
+    width: 35vw;
+    min-height: 20vh;
+}

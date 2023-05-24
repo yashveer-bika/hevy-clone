@@ -1,0 +1,22 @@
+
+
+.exercise-page-screen-container {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+    gap: 20px;
+    
+}
+
+.exercise-page-left-side {
+}
+
+.exercise-page-right-side {
+    display: flex;
+    width: 40vw;
+}
+
+.main-exercise-photo {
+    width: 10vw;
+    height: 10vh;
+}

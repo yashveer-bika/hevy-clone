@@ -11,6 +11,7 @@ import FeedPage from "./pages/FeedPage";
 import RoutinesPage from "./pages/RoutinesPage";
 import CreateRoutine from "./pages/CreateRoutine";
 import RoutineViewPage from "./pages/RoutineViewPage";
+import ExercisePage from "./pages/ExercisePage";
 
 function App() {
   return (
@@ -33,6 +34,10 @@ function App() {
           <Route path="/create-routine" element={<CreateRoutine editMode={false}/>}/>
           <Route path="/routine-view" element={<RoutineViewPage/>}/>
           <Route path="/edit-routine/:id" element={<CreateRoutine editMode={true}/>} />
+          <Route path="/exercises" element={<ExercisePage/>}/>
+          {/* TODO: connect id to UI */}
+          <Route path="/exercises/:id" element={<ExercisePage/>}/>
+
           {/* <Route path="/about" element={<About />} /> */}
           {/* <Route path="/contact" element={<Contact />} /> */}
           <Route path="*" element={<NotFoundPage></NotFoundPage>}/>

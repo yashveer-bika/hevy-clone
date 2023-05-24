@@ -8,11 +8,11 @@ interface Exercise {
     muscle: string
 }
 
-export default function ExerciseRow({exercise, addToRoutine} : any) {
+export default function ExerciseRow({exercise, addToRoutine, addable} : any) {
 
     return (
         <Box className="exercise-row-container" onClick={() => addToRoutine(exercise)}>
-            <p>+</p>
+            {addable ? <div> <p>+</p> </div> : <div> </div> }
             <img src={exercise.imgPath} alt="img-slot"></img>
             <Box>
                 <h1>{exercise.name}</h1>

@@ -108,7 +108,7 @@ export default function CreateRoutine({editMode, id} : any) {
             </Box>
 
             <Box className="create-routine-screen-right-container">
-                <FilterableSearchableExerciseTable addToRoutineRows={addToActiveExerciseRows} ></FilterableSearchableExerciseTable>
+                <FilterableSearchableExerciseTable addToRoutineRows={addToActiveExerciseRows} addable={true} ></FilterableSearchableExerciseTable>
 
             </Box>
 
