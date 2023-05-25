@@ -18,8 +18,16 @@ const exercise1 = {
     secondaryMuscles: "Glutes"
 }
 
-export default function ExerciseInfo({exercise}: any) {
-    return (
+export default function ExerciseInfo({exercise, id}: any) {
+
+    // TODO: read exercise from API using id???
+
+    const defaultBox =
+        <Box className="exercise-info-container">
+
+        </Box>
+
+    const exerciseBox = 
         <Box className="exercise-info-container">
             <p> {exercise1.name} </p>
             <Box>
@@ -51,5 +59,8 @@ export default function ExerciseInfo({exercise}: any) {
                 <Plot data={{}}></Plot>
             </Box>
         </Box>
+
+    return (
+        (id === undefined) ? defaultBox : exerciseBox
     );
 }
