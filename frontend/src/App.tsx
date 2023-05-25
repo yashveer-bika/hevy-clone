@@ -35,7 +35,6 @@ function App() {
           <Route path="/routine-view" element={<RoutineViewPage/>}/>
           <Route path="/edit-routine/:id" element={<CreateRoutine editMode={true}/>} />
           <Route path="/exercises" element={<ExercisePage/>}/>
-          {/* TODO: connect id to UI */}
           <Route path="/exercises/:id" element={<ExercisePage/>}/>
 
           {/* <Route path="/about" element={<About />} /> */}

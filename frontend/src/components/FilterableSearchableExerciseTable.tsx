@@ -129,7 +129,7 @@ const exercises = [
     // },
 ]
 
-export default function FilterableSearchableExerciseTable( {addToRoutineRows, addable} : any ) {
+export default function FilterableSearchableExerciseTable( {addToRoutineRows, addable, moveToExercisePage} : any ) {
 
     // const [activeExercises, setActiveExercises] = useState<Exercise[]>(exercises);
     
@@ -201,7 +201,12 @@ export default function FilterableSearchableExerciseTable( {addToRoutineRows, ad
                 <Box className="exercise-table-container">
                     {filteredItems.map(
                         (exercise, index) => 
-                        <ExerciseRow key={index} exercise={exercise} addToRoutine={(e : Exercise) => addToRoutineRows(e) } addable={addable} >  </ExerciseRow>
+                        <ExerciseRow key={index} exercise={exercise} 
+                                     addToRoutine={(e : Exercise) => addToRoutineRows(e) } 
+                                     moveToExercisePage={ moveToExercisePage }
+                                     addable={addable} >  
+                                     
+                                     </ExerciseRow>
                         )
                     }
                 </Box>

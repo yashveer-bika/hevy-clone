@@ -13,7 +13,7 @@ export default function ExercisePage() {
 
     return (
         <Box className="exercise-page-screen-container">
-            <FilterableSearchableExerciseTable className="exercise-page-left-side" addToRoutineRows={() => {}} addable={false} ></FilterableSearchableExerciseTable>
+            <FilterableSearchableExerciseTable className="exercise-page-left-side" addToRoutineRows={() => {}} addable={false} moveToExercisePage={true} ></FilterableSearchableExerciseTable>
 
             <Box className="exercise-page-right-side">
                 <ExerciseInfo id={id}></ExerciseInfo>
