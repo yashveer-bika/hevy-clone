@@ -43,90 +43,90 @@ const exercises = [
         muscle: "Triceps",
         equipment: "Dumbbell"
     },
-    // {
-    //     id: 5,
-    //     name: "21s Biceps Curls",
-    //     imgPath: "",
-    //     muscle: "Biceps",
-    //     equipment: "Dumbbell"
-    // },
-    // {
-    //     id: 6,
-    //     name: "Machine Pressdown",
-    //     imgPath: "",
-    //     muscle: "Triceps",
-    //     equipment: "Machine"
-    // },
-    // {
-    //     id: 7,
-    //     name: "21s Biceps Curls",
-    //     imgPath: "",
-    //     muscle: "Biceps",
-    //     equipment: "Dumbbell"
-    // },
-    // {
-    //     id: 8,
-    //     name: "Machine Pressdown",
-    //     imgPath: "",
-    //     muscle: "Triceps",
-    //     equipment: "Machine"
-    // },
-    // {
-    //     id: 9,
-    //     name: "21s Biceps Curls",
-    //     imgPath: "",
-    //     muscle: "Biceps",
-    //     equipment: "Dumbbell"
-    // },
-    // {
-    //     id: 10,
-    //     name: "Machine Pressdown",
-    //     imgPath: "",
-    //     muscle: "Triceps",
-    //     equipment: "Machine"
-    // },
-    // {
-    //     id: 11,
-    //     name: "21s Biceps Curls",
-    //     imgPath: "",
-    //     muscle: "Biceps",
-    //     equipment: "Dumbbell"
-    // },
-    // {
-    //     id: 12,
-    //     name: "Machine Pressdown",
-    //     imgPath: "",
-    //     muscle: "Triceps",
-    //     equipment: "Machine"
-    // },
-    // {
-    //     id: 13,
-    //     name: "21s Biceps Curls",
-    //     imgPath: "",
-    //     muscle: "Biceps",
-    //     equipment: "Dumbbell"
-    // },
-    // {
-    //     id: 14,
-    //     name: "Machine Pressdown",
-    //     imgPath: "",
-    //     muscle: "Triceps",
-    //     equipment: "Machine"
-    // },
-    // {
-    //     id: 15,
-    //     name: "21s Biceps Curls",
-    //     imgPath: "",
-    //     muscle: "Biceps",
-    //     equipment: "Dumbbell"
-    // },
-    // {
-    //     id: 16,
-    //     name: "Machine Pressdown",
-    //     imgPath: "",
-    //     muscle: "Triceps",
-    //     equipment: "Machine"
-    // },
+    {
+        id: 5,
+        name: "21s Biceps Curls",
+        imgPath: "",
+        muscle: "Biceps",
+        equipment: "Dumbbell"
+    },
+    {
+        id: 6,
+        name: "Machine Pressdown",
+        imgPath: "",
+        muscle: "Triceps",
+        equipment: "Machine"
+    },
+    {
+        id: 7,
+        name: "21s Biceps Curls",
+        imgPath: "",
+        muscle: "Biceps",
+        equipment: "Dumbbell"
+    },
+    {
+        id: 8,
+        name: "Machine Pressdown",
+        imgPath: "",
+        muscle: "Triceps",
+        equipment: "Machine"
+    },
+    {
+        id: 9,
+        name: "21s Biceps Curls",
+        imgPath: "",
+        muscle: "Biceps",
+        equipment: "Dumbbell"
+    },
+    {
+        id: 10,
+        name: "Machine Pressdown",
+        imgPath: "",
+        muscle: "Triceps",
+        equipment: "Machine"
+    },
+    {
+        id: 11,
+        name: "21s Biceps Curls",
+        imgPath: "",
+        muscle: "Biceps",
+        equipment: "Dumbbell"
+    },
+    {
+        id: 12,
+        name: "Machine Pressdown",
+        imgPath: "",
+        muscle: "Triceps",
+        equipment: "Machine"
+    },
+    {
+        id: 13,
+        name: "21s Biceps Curls",
+        imgPath: "",
+        muscle: "Biceps",
+        equipment: "Dumbbell"
+    },
+    {
+        id: 14,
+        name: "Machine Pressdown",
+        imgPath: "",
+        muscle: "Triceps",
+        equipment: "Machine"
+    },
+    {
+        id: 15,
+        name: "21s Biceps Curls",
+        imgPath: "",
+        muscle: "Biceps",
+        equipment: "Dumbbell"
+    },
+    {
+        id: 16,
+        name: "Machine Pressdown",
+        imgPath: "",
+        muscle: "Triceps",
+        equipment: "Machine"
+    },
 ]
 
 export default function FilterableSearchableExerciseTable( {addToRoutineRows, addable, moveToExercisePage} : any ) {

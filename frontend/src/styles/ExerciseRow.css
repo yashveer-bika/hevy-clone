@@ -7,4 +7,11 @@
     /* border-radius: 10px; */
     width: 95%;
     align-items: center;
+    justify-content: left;
+    padding-top: 5px;
+    padding-bottom: 5px;
+}
+
+.exercise-row-container h2 {
+    color: grey;
 }

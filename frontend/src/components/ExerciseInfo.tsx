@@ -29,33 +29,34 @@ export default function ExerciseInfo({exercise, id}: any) {
 
     const exerciseBox = 
         <Box className="exercise-info-container">
-            <p> {exercise1.name} </p>
-            <Box>
+            <p className="exercise-name-container"> {exercise1.name} </p>
+            <Box className="img-info-container">
                 <img className="main-exercise-photo" src={exercise1.imgPath} alt="exercise-photo"></img>
                 <Box className="mini-exercise-info-container">
-                    <p> Info </p>
+                    <p className="info-text"> Info </p>
                     <p> Equipment: {exercise1.equipment} </p>
                     <p> Primary: {exercise1.primaryMuscle} </p>
-                    { exercise1.secondaryMuscles === undefined ? <div></div> : <div> <p> Primary: {exercise1.primaryMuscle} </p> </div> }
+                    { exercise1.secondaryMuscles === undefined ? <div></div> : <div> <p> Secondary: {exercise1.secondaryMuscles} </p> </div> }
                 </Box>
             </Box>
 
             <Box>
-                <p>Statistics</p>
-                {/* Dropdown for Last 12 weeks, Year, All Time */}
+                <p className="header-text">Statistics</p>
+                {/* Don't implement the Dropdown for Last 12 weeks, Year, All Time */}
+                {/* Put all the data */}
                 <p>Heaviest Weight</p>
                 {/* TODO: use API data to get heaviest weight?? */}
-                <p>80 lbs</p>
+                <p className="header-text">80 lbs</p>
                 <Plot data={{}}></Plot>
 
                 <p>One Rep Max</p>
                 {/* TODO: use API data to get heaviest weight?? */}
-                <p>112.7 lbs</p>
+                <p className="header-text">112.7 lbs</p>
                 <Plot data={{}}></Plot>
 
                 <p>Best Set Volume</p>
                 {/* TODO: use API data to get heaviest weight?? */}
-                <p>960 lbs</p>
+                <p className="header-text">960 lbs</p>
                 <Plot data={{}}></Plot>
             </Box>
         </Box>
