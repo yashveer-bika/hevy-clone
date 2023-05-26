@@ -1,4 +1,6 @@
-import { Box } from "@chakra-ui/react";
+import { Box, Button } from "@chakra-ui/react";
+import { useNavigate } from "react-router-dom";
+import Plot from "../components/Plot";
 import WorkoutCellContainer from "../components/WorkoutCellContainer";
 
 import "../styles/ProfilePage.css"
@@ -27,6 +29,10 @@ const sample_posts: Post[] = [
 
 
 export default function ProfilePage() {
+
+    const navigate = useNavigate();
+
+
     return (
         <Box className="profile-page-container">
             <Box className="profile-overview-container">
@@ -50,7 +56,7 @@ export default function ProfilePage() {
                 </Box>
             </Box>
 
-            <Box>
+            <Box className="bottom-container">
                 <Box className="left-container">
                     <p className="header-text"> Workouts </p>
                     {sample_posts.map((post_) => (
@@ -61,7 +67,12 @@ export default function ProfilePage() {
                         ))}
                 </Box>
 
-                <Box className="right-container"></Box>
+                <Box className="right-container">
+                    <p className="header-text"> Statistics </p>
+                    <Plot data={{}}></Plot>
+                    <p className="subheader-text">Dashboard</p>
+                    <Button onClick={() => navigate("/exercises")} justifyContent="left" variant="outline" backgroundColor="white">Exercises</Button>
+                </Box>
             </Box>
         </Box>
     );

@@ -59,3 +59,28 @@
     flex-direction: column;
     align-items: center;
 }
+
+.bottom-container {
+    display: flex;
+    gap: 20px
+}
+
+.left-container {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.right-container {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    width: 100%;
+}
+
+.sub-header-text {
+    font-weight: 500;
+    font-size: 18px;
+    color: rgb(17, 25, 39);
+    line-height: 28px;
+}

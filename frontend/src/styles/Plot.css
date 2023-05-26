@@ -3,7 +3,7 @@
     display: flex;
     border: 1px rgb(240,240,240) solid;
     border-radius: 8px;
-    width: 35vw;
+    width: 100%;
     min-height: 20vh;
     background-color: white;
 }
