@@ -1,7 +1,7 @@
 import { useEffect } from "react";
 import UserSearchBar from "../components/UserSearchBar";
 import WorkoutCellContainer from "../components/WorkoutCellContainer";
-import "../FeedPage.css";
+import "../styles/FeedPage.css";
 import { Post } from "../Types";
 
 const sample_posts: Post[] = [

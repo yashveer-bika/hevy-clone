@@ -3,7 +3,7 @@ import { Container } from '@chakra-ui/react'
 import {Post} from "../Types"
 import { Link } from '@chakra-ui/react'
 
-import "../FeedPage.css";
+import "../styles/WorkoutCellContainer.css";
 import CommentSection from "./CommentSection";
 import CopyLinkButton from "./CopyLinkButton";
 

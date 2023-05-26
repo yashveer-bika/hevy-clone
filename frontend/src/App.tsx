@@ -12,6 +12,7 @@ import RoutinesPage from "./pages/RoutinesPage";
 import CreateRoutine from "./pages/CreateRoutine";
 import RoutineViewPage from "./pages/RoutineViewPage";
 import ExercisePage from "./pages/ExercisePage";
+import ProfilePage from "./pages/ProfilePage";
 
 function App() {
   return (
@@ -36,6 +37,8 @@ function App() {
           <Route path="/edit-routine/:id" element={<CreateRoutine editMode={true}/>} />
           <Route path="/exercises" element={<ExercisePage/>}/>
           <Route path="/exercises/:id" element={<ExercisePage/>}/>
+          <Route path="/profile" element={<ProfilePage/>}/>
+
 
           {/* <Route path="/about" element={<About />} /> */}
           {/* <Route path="/contact" element={<Contact />} /> */}
