@@ -9,7 +9,7 @@ interface Exercise {
     muscle: string
 }
 
-export default function ExerciseRow({exercise, addToRoutine, addable, moveToExercisePage} : any) {
+export default function ExerciseRow({exercise, addToRoutine, addable, moveToExercisePage, active, activate} : any) {
     const navigate = useNavigate();
 
     
@@ -21,8 +21,10 @@ export default function ExerciseRow({exercise, addToRoutine, addable, moveToExer
         }
     }
 
+    const containerClass = active ? "active-exercise-row-container" : "exercise-row-container"
+
     return (
-        <Box className="exercise-row-container" onClick={ () => { addToRoutine(exercise); reroute(); } } >
+        <Box className={containerClass} onClick={ () => { addToRoutine(exercise); reroute(); activate();} } >
                 {addable ? <div> <p>+</p> </div> : <div> </div> }
                 <img src={exercise.imgPath} alt="img-slot"></img>
                 <Box>

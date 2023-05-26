@@ -1,4 +1,18 @@
 
+.active-exercise-row-container {
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+    border-bottom: 0.5px gray solid;
+    /* border-radius: 10px; */
+    width: 95%;
+    align-items: center;
+    justify-content: left;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    background-color: rgb(240,240,240);
+}
+
 .exercise-row-container {
     display: flex;
     flex-direction: row;
@@ -10,6 +24,10 @@
     justify-content: left;
     padding-top: 5px;
     padding-bottom: 5px;
+}
+
+.active-exercise-row-container h2 {
+    color: grey;
 }
 
 .exercise-row-container h2 {

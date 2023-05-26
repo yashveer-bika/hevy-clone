@@ -182,21 +182,23 @@ export default function FilterableSearchableExerciseTable( {addToRoutineRows, ad
         setOpenModal(true);
     }
 
+    const [activeIndex, setActiveIndex] = useState(-1);
+
     return (
         <Box className="filterable-searchable-exercise-table-container">
             <Box className="filterable-searchable-exercise-table-inner-container">
 
-                <Box> <p>Filters</p> </Box> 
+                <Box> <p className="section-title">Filters</p> </Box> 
                 
                 <Box> <DropdownFilter options={equipmentOptions} onFilter={handleEquipmentFilter}> </DropdownFilter> </Box> 
 
                 <Box> <DropdownFilter options={muscleOptions} onFilter={handleMuscleFilter}> </DropdownFilter> </Box> 
                 
-                <Box className="header-container"> <p>Library</p> <Button onClick={handleCreateExercise}>+ Create Exercise</Button> </Box> 
+                <Box className="header-container"> <p  className="section-title">Library</p> <Button onClick={handleCreateExercise}>+ Create Exercise</Button> </Box> 
 
                 <CreateExerciseModal isOpen={openModal} onClose={handleCloseModal} ></CreateExerciseModal>
 
-                <Box>  <SearchBar onSearch={handleSearch}></SearchBar> </Box>
+                <Box>  <SearchBar onSearch={handleSearch} placeholder="Search Exercises"></SearchBar> </Box>
 
                 <Box className="exercise-table-container">
                     {filteredItems.map(
@@ -204,6 +206,8 @@ export default function FilterableSearchableExerciseTable( {addToRoutineRows, ad
                         <ExerciseRow key={index} exercise={exercise} 
                                      addToRoutine={(e : Exercise) => addToRoutineRows(e) } 
                                      moveToExercisePage={ moveToExercisePage }
+                                     active={activeIndex == index}
+                                     activate={() => setActiveIndex(index)}
                                      addable={addable} >  
                                      
                                      </ExerciseRow>

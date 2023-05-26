@@ -2,7 +2,7 @@
 .filterable-searchable-exercise-table-container {
     display: flex;
     flex-direction: column;
-    border: 1px gray solid;
+    border: 1px rgb(240, 240, 240) solid;
     border-radius: 10px;
     width: 20vw;
     /* justify-content: center; */
@@ -25,4 +25,14 @@
     align-items: center;
     height: 65vh;
     overflow-y: auto;
+}
+
+.section-title {
+    color: grey;
+    font-size: large;
+}
+
+.header-container {
+    display: flex;
+    align-items: center;
 }

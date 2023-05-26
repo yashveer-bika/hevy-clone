@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { Input, Button, Flex } from '@chakra-ui/react';
 
-const SearchBar = ({ onSearch } : any) => {
+const SearchBar = ({ onSearch, placeholder="Enter your search query" } : any) => {
   const [searchQuery, setSearchQuery] = useState('');
 
   useEffect(() => {
@@ -16,7 +16,7 @@ const SearchBar = ({ onSearch } : any) => {
   return (
     <Flex alignItems="center">
       <Input
-        placeholder="Enter your search query"
+        placeholder={placeholder}
         value={searchQuery}
         onChange={handleChange}
       />
