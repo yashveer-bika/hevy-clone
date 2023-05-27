@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import { Select, VStack, Text } from '@chakra-ui/react';
 
-const DropdownFilter = ({ options, onFilter } : any) => {
+const DropdownFilter = ({ options, onFilter=(()=>{}) } : any) => {
   const [selectedOption, setSelectedOption] = useState('');
 
   const handleSelectChange = (event : any) => {

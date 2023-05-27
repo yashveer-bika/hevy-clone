@@ -1,0 +1,26 @@
+
+
+.account-right-side-container {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    padding: 20px;
+}
+
+.private-box {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.password-update-block {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    width: 50%
+}
+
+.update-password-button {
+    width: 60%
+}
