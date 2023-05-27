@@ -39,7 +39,15 @@ function App() {
           <Route path="/exercises" element={<ExercisePage/>}/>
           <Route path="/exercises/:id" element={<ExercisePage/>}/>
           <Route path="/profile" element={<ProfilePage/>}/>
+
           <Route path="/settings" element={<SettingsPage/>}/>
+          
+          <Route path="/settings?profile" element={<SettingsPage/>}/>
+          <Route path="/settings?accounts" element={<SettingsPage/>}/>
+          <Route path="/settings?subscription" element={<SettingsPage/>}/>
+          <Route path="/settings?units" element={<SettingsPage/>}/>
+          <Route path="/settings?theme" element={<SettingsPage/>}/>
+          <Route path="/settings?export" element={<SettingsPage/>}/>
 
 
           {/* <Route path="/about" element={<About />} /> */}

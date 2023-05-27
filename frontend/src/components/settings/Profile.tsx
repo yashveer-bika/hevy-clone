@@ -25,7 +25,7 @@ export default function Profile() {
     // const [bio, setBio] = useState("");
 
     return (
-        <Box>
+        <Box className="profile-right-side-container">
             <Box className="profile-pic-container">
                 <img src="" alt="profile-pic"/>
                 <Button variant="outline">Change Picture</Button>
@@ -33,6 +33,8 @@ export default function Profile() {
 
             <NamedInputBlock name="Name"></NamedInputBlock>
             <NamedInputBlock name="Bio"></NamedInputBlock>
+
+            <Button onClick={()=>{}}>Save</Button>
 
         </Box>
     );

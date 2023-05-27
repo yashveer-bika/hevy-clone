@@ -1,10 +1,18 @@
 
+.profile-right-side-container {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    align-items: center;
+    gap: 20px;
+    padding: 20px;
+}
 
 .named-input-block-container {
     display: flex;
     border-bottom: 1px rgb(236, 237, 240) solid;
     padding: 8px;
-    /* width: ; */
+    width: 100%;
 }
 
 .named-input-name {
