@@ -13,6 +13,7 @@ import CreateRoutine from "./pages/CreateRoutine";
 import RoutineViewPage from "./pages/RoutineViewPage";
 import ExercisePage from "./pages/ExercisePage";
 import ProfilePage from "./pages/ProfilePage";
+import SettingsPage from "./pages/SettingsPage";
 
 function App() {
   return (
@@ -38,6 +39,7 @@ function App() {
           <Route path="/exercises" element={<ExercisePage/>}/>
           <Route path="/exercises/:id" element={<ExercisePage/>}/>
           <Route path="/profile" element={<ProfilePage/>}/>
+          <Route path="/settings" element={<SettingsPage/>}/>
 
 
           {/* <Route path="/about" element={<About />} /> */}
