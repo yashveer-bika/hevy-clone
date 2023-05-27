@@ -2,7 +2,7 @@ import { Box, Text, Link } from "@chakra-ui/react";
 
 import "../../styles/settings/Subscription.css"
 
-export default function Account() {
+export default function Subscription() {
     // TODO: make a contact page to contact page, plug my Github, resume, email, etc.
     // TODO: set up a mini Payment system to pay me
     
