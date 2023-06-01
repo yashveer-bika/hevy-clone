@@ -14,6 +14,7 @@ import RoutineViewPage from "./pages/RoutineViewPage";
 import ExercisePage from "./pages/ExercisePage";
 import ProfilePage from "./pages/ProfilePage";
 import SettingsPage from "./pages/SettingsPage";
+import LogPage from "./pages/LogPage";
 
 function App() {
   return (
@@ -50,8 +51,8 @@ function App() {
           <Route path="/settings?export" element={<SettingsPage/>}/>
 
 
-          {/* <Route path="/about" element={<About />} /> */}
-          {/* <Route path="/contact" element={<Contact />} /> */}
+          <Route path="/log" element={<LogPage />} />
+
           <Route path="*" element={<NotFoundPage></NotFoundPage>}/>
         </Routes>
 
