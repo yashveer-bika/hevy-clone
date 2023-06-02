@@ -2,9 +2,12 @@ import { useState } from 'react';
 import { Box, Button, IconButton, Input, Link, Menu, MenuButton, MenuItem, MenuList } from '@chakra-ui/react';
 import { CloseIcon, CopyIcon, EditIcon, CheckIcon, HamburgerIcon } from '@chakra-ui/icons';
 import "../styles/RoutineCell.css"
+import { useNavigate } from 'react-router-dom';
 
 
 const RoutineCell = ({ routineLink, index, name, onDelete, onDuplicate, inLogView } : any) => {
+  const navigate = useNavigate();
+
   // const [isEditing, setIsEditing] = useState(false);
   // const [editedName, setEditedName] = useState(name);
 
@@ -55,6 +58,9 @@ const RoutineCell = ({ routineLink, index, name, onDelete, onDuplicate, inLogVie
   // TODO: 
   function handleStartRoutine() {
     // redirect to logging/{routine-id}/{:id}
+    navigate(`/logging/routine-id/id`)
+
+
   }
 
   // TODO: fetch exercise text

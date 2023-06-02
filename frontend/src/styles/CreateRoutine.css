@@ -43,6 +43,11 @@
     width: 90%;
 }
 
+.routine-title-text {
+    font-size: xx-large;
+    font-weight: bold;
+}
+
 .routine-table {
     /* border: 5px black solid; */
     margin-top: 10px;

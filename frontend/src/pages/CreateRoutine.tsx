@@ -12,7 +12,8 @@ interface Exercise {
     imgPath: string
 }
 
-export default function CreateRoutine({editMode, id} : any) {
+// mode : "edit", "log", "create", "view"
+export default function CreateRoutine({editMode, id, mode} : any) {
     // TODO: setup something to get my routine id
     //       - edit mode logic for updating the routine
 
@@ -72,26 +73,58 @@ export default function CreateRoutine({editMode, id} : any) {
       }, []);
 
 
+
+    const headerText = (() => {
+        if (mode == "edit") {
+            return "Edit Routine"
+    
+        } else if (mode == "log") {
+            return "Logging Workout"
+    
+        } else if (mode == "create") {
+            return "Create Routine"
+    
+        } else {
+            // view case
+            return "Viewing Routine"
+        }
+    })()
+    
+
+
     return (
         <Box className="screen-container">
             <Box className="screen-left-container">
                 <Box className="header">
-                    <p> {editMode ? "Edit Routine" : "Create Routine"} </p>
+                    {/* <p> {editMode ? "Edit Routine" : "Create Routine"} </p> */}
+                    <p>{headerText}</p>
                     <Button onClick={handleSaveRoutine} colorScheme='blue' width={"30%"} > {editMode ? "Update Routine" : "Save Routine"}</Button>
                 </Box>
 
                 <Box className="routine-table-w-title-container">
                     <Box className="routine-table-w-title">
                         
-                        <Input
-                            value={routineTitle}
-                            onChange={event => setRoutineTitle(event.target.value)}
-                            placeholder="Routine Title"
-                            fontSize={"3xl"}
-                            variant='unstyled'
-                        />
+                        {
+                            (mode=="log" || mode=="view") 
+                            ? 
+                            <p className="routine-title-text">Routine Title</p>
+                            :
+                            <>
+                                <Input
+                                    value={routineTitle}
+                                    onChange={event => setRoutineTitle(event.target.value)}
+                                    placeholder="Routine Title"
+                                    fontSize={"3xl"}
+                                    variant='unstyled'
+                                />
 
-                        <Divider border={"1px solid"} color="gray.400"></Divider>
+                                <Divider border={"1px solid"} color="gray.400"></Divider>
+                            </>
+                            
+                        }
+                        
+                        
+
 
                         {/* TODO: allow exercises to be added to here */}
                         <RoutineTable 
@@ -108,7 +141,12 @@ export default function CreateRoutine({editMode, id} : any) {
             </Box>
 
             <Box className="create-routine-screen-right-container">
-                <FilterableSearchableExerciseTable addToRoutineRows={addToActiveExerciseRows} addable={true} ></FilterableSearchableExerciseTable>
+                {
+                    (mode=="log" || mode=="view") 
+                        ? <div></div>
+                        : <FilterableSearchableExerciseTable addToRoutineRows={addToActiveExerciseRows} addable={true} ></FilterableSearchableExerciseTable>
+                }
+                
 
             </Box>
 

@@ -15,6 +15,7 @@ import ExercisePage from "./pages/ExercisePage";
 import ProfilePage from "./pages/ProfilePage";
 import SettingsPage from "./pages/SettingsPage";
 import LogPage from "./pages/LogPage";
+import LoggingPage from "./pages/LoggingPage";
 
 function App() {
   return (
@@ -52,6 +53,8 @@ function App() {
 
 
           <Route path="/log" element={<LogPage />} />
+          {/* TODO: set up better path logic */}
+          <Route path="/logging/routine-id/id" element={<LoggingPage />} />
 
           <Route path="*" element={<NotFoundPage></NotFoundPage>}/>
         </Routes>

@@ -90,7 +90,7 @@ export default function SetRepTable () {
       <tfoot>
         <Tr>
           <Td colSpan={4}>
-            <Button onClick={handleAddRow}>Add Row</Button>
+            <Button onClick={handleAddRow}>Add Set</Button>
           </Td>
         </Tr>
       </tfoot>
