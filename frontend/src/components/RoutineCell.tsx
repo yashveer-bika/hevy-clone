@@ -1,10 +1,12 @@
 import { useState } from 'react';
-import { Box, IconButton, Input, Link } from '@chakra-ui/react';
-import { CloseIcon, CopyIcon, EditIcon, CheckIcon } from '@chakra-ui/icons';
+import { Box, Button, IconButton, Input, Link, Menu, MenuButton, MenuItem, MenuList } from '@chakra-ui/react';
+import { CloseIcon, CopyIcon, EditIcon, CheckIcon, HamburgerIcon } from '@chakra-ui/icons';
+import "../styles/RoutineCell.css"
 
-const RoutineCell = ({ routineLink, index, name, onDelete, onDuplicate, onNameChange } : any) => {
-  const [isEditing, setIsEditing] = useState(false);
-  const [editedName, setEditedName] = useState(name);
+
+const RoutineCell = ({ routineLink, index, name, onDelete, onDuplicate, inLogView } : any) => {
+  // const [isEditing, setIsEditing] = useState(false);
+  // const [editedName, setEditedName] = useState(name);
 
   const handleDelete = () => {
     onDelete(index);
@@ -14,79 +16,105 @@ const RoutineCell = ({ routineLink, index, name, onDelete, onDuplicate, onNameCh
     onDuplicate(index);
   };
 
-  const handleNameChange = (event : any) => {
-    setEditedName(event.target.value);
-  };
+  // const handleNameChange = (event : any) => {
+  //   setEditedName(event.target.value);
+  // };
 
-  const handleNameBlur = () => {
-    onNameChange(index, editedName);
-    setIsEditing(false);
-  };
+  // const handleNameBlur = () => {
+  //   onNameChange(index, editedName);
+  //   setIsEditing(false);
+  // };
 
-  const handleEditClick = () => {
-    setIsEditing(true);
-  };
+  // const handleEditClick = () => {
+  //   setIsEditing(true);
+  // };
+
+  const handleMenuToggle = () => {
+    // TODO:
+  }
+
+  function handleEditRoutine() {
+    /* TODO: redirect to a page of "/edit-routine/:id", and when I 
+             press "Save Routine" on the edit-routine page, update API
+             and redirect back the the original page (could be /routines or /log)
+    */
+  }
+
+  // function handleDeleteRoutine() {
+  //   // TODO:
+  // }
+
+  /*
+    TODO: copy link to clipboard, make a popup(?) to that says 
+    "Copied Link Routine" and show share on Twitter/Instagram
+  */
+  function handleShareRoutine() {
+    
+  }
+
+  // TODO: 
+  function handleStartRoutine() {
+    // redirect to logging/{routine-id}/{:id}
+  }
+
+  // TODO: fetch exercise text
+  const exerciseText = "Back Squat, BB Row, Bench Press, Overhead Extension, BB Curl, Hanging Leg Raises, Back Extensions"
 
   return (
     <Box
-      w="80%"
-      h="75px"
-      bg="gray.200"
-      borderRadius="md"
-      display="flex"
-      justifyContent="space-between"
-      alignItems="center"
-      px={4}
-      my={2}
+      className="routine-cell-container"
+      // w="80%"
+      // h="75px"
+      // bg="gray.200"
+      // borderRadius="md"
+      // display="flex"
+      // justifyContent="space-between"
+      // alignItems="center"
+      // px={4}
+      // my={2}
     >
       <Box>
-        {isEditing ? (
-          <Input
-            value={editedName}
-            onChange={handleNameChange}
-            onBlur={handleNameBlur}
-            size="sm"
-            variant="unstyled"
-            _focus={{ outline: 'none' }}
-            autoFocus
-          />
-        ) : (
-          <Box>
-            <Link href={routineLink}> 
-              <p>{name}</p>
-            </Link>
+        <Box>
+          <Link href={routineLink}> 
+            {/* TODO: make the name bigger */}
+            <p className="routine-name-text">{name}</p>
+          </Link>
+          {/* TODO: add list of exercises in routine as preview */}
+          {/* TODO: make the text smaller, grey, and be scrollable left-right */}
+          <Box className='routine-preview-container'>
+            <p className='routine-preview-text'>{exerciseText}</p>
           </Box>
-        )}
+        </Box>
       </Box>
       <Box>
-        {isEditing ? (
-          <IconButton
-            icon={<CheckIcon />}
-            aria-label="Save"
-            onClick={handleNameBlur}
-            mr={2}
+        {inLogView ? 
+          <Button
+              as={IconButton}
+              icon={<CheckIcon />}
+              aria-label="Options"
+              variant="ghost"
+              onClick={handleStartRoutine}
           />
-        ) : (
-          <>
-            <IconButton
-              icon={<EditIcon />}
-              aria-label="Edit"
-              onClick={handleEditClick}
-              mr={2}
-            />
-            <IconButton
-              icon={<CopyIcon />}
-              aria-label="Duplicate"
-              onClick={handleDuplicate}
-              mr={2}
-            />
-            <IconButton
-              icon={<CloseIcon />}
-              aria-label="Delete"
-              onClick={handleDelete}
-            />
-          </>
-        )}
+          : <div></div>}
+      </Box>
+
+      <Box>
+              <Menu>
+                    <MenuButton
+                        as={IconButton}
+                        icon={<HamburgerIcon />}
+                        aria-label="Options"
+                        variant="ghost"
+                        onClick={handleMenuToggle}
+                    />
+                    <MenuList>
+                    <MenuItem onClick={handleShareRoutine}>Share Routine</MenuItem>
+                    <MenuItem onClick={handleEditRoutine}>Edit Routine</MenuItem>
+                    <MenuItem onClick={handleDuplicate}>Duplicate</MenuItem>
+                    <MenuItem onClick={handleDelete}>Delete Routine</MenuItem>
+
+                    </MenuList>
+                </Menu>
       </Box>
     </Box>
   );

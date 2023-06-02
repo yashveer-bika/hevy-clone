@@ -1,0 +1,29 @@
+
+.routine-cell-container {
+    display: flex;
+    width: 95%;
+    /* height: 75px; */
+    background-color: rgb(240, 240, 240);
+    border-radius: 10px;
+    border: 1px solid black;
+    justify-content: space-between;
+    align-items: center;
+    padding: 5px;
+}
+
+.routine-name-text {
+    font-size: large;
+    font-weight: bold;
+}
+
+.routine-preview-container {
+    /* display: flex;
+    width: auto;
+    height: min-content;
+    overflow-x: scroll; */
+}
+
+.routine-preview-text {
+    color: grey;
+    font-size: small;
+}

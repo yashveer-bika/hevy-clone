@@ -201,7 +201,6 @@ export default function RoutinesPage() {
                                 routineLink={box.routineLink}
                                 onDelete={handleDelete}
                                 onDuplicate={handleDuplicate}
-                                onNameChange={handleNameChange}
                             />
                         ))}
                     </div>

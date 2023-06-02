@@ -40,6 +40,18 @@ export default function LogPage() {
         { id: 3, name: "Home Workouts", },
       ]);
 
+    
+    // TODO: create a super simple view.
+    // 
+
+    function handleDuplicate() {
+
+    }
+
+    function handleDelete() {
+        
+    }
+
     return (
         <Box className="log-screen-container">
             <Box className="log-inner-screen-container">
@@ -60,11 +72,11 @@ export default function LogPage() {
                     <Button onClick={handleExplore}>Explore</Button>
                 </Box>
 
-                {/* TODO: show my folders and routines */}
+                {/* TODO: routines */}
 
                 <Box className="routines-overview-screen-right-container" borderRadius='lg' border="1px" w="60%" borderColor='gray.300' >
                 
-                    <Box>
+                    {/* <Box>
                         {
                             folders.map((folder) => (
                                 <Folder 
@@ -76,10 +88,12 @@ export default function LogPage() {
                                 </Folder>
                             ))
                         }
-                    </Box>
+                    </Box> */}
                     
                     
 
+                    {/* TODO: add a start button to each routine cell */}
+                    {/* TODO: show a preview for each routine cell */}
                     <Box className="my-routines">
                         <h1>My Routines ({routines.length})</h1>
                         
@@ -90,9 +104,9 @@ export default function LogPage() {
                                     index={box.id}
                                     name={box.name}
                                     routineLink={box.routineLink}
-                                    onDelete={() => {}}
-                                    onDuplicate={() => {}}
-                                    onNameChange={() => {}}
+                                    onDelete={handleDelete}
+                                    onDuplicate={handleDuplicate}
+                                    inLogView={true}
                                 />
                             ))}
                         </div>
