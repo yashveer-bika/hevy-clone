@@ -142,9 +142,10 @@ export default function CreateRoutine({editMode, id, mode} : any) {
 
             <Box className="create-routine-screen-right-container">
                 {
-                    (mode=="log" || mode=="view") 
-                        ? <div></div>
-                        : <FilterableSearchableExerciseTable addToRoutineRows={addToActiveExerciseRows} addable={true} ></FilterableSearchableExerciseTable>
+                    // (mode=="log" || mode=="view") 
+                    //     ? <div></div>
+                    //     : 
+                        <FilterableSearchableExerciseTable addToRoutineRows={addToActiveExerciseRows} addable={true} ></FilterableSearchableExerciseTable>
                 }
                 
 

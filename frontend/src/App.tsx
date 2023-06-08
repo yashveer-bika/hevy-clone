@@ -55,7 +55,7 @@ function App() {
           <Route path="/log" element={<LogPage />} />
           {/* TODO: set up better path logic */}
           <Route path="/logging/routine-id/id" element={<LoggingPage />} />
-
+          <Route path="/logging/new-routine" element={<LoggingPage />} />
           <Route path="*" element={<NotFoundPage></NotFoundPage>}/>
         </Routes>
 

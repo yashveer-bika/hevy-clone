@@ -1,5 +1,5 @@
 import { HamburgerIcon } from "@chakra-ui/icons";
-import { Box, IconButton, Input, Menu, MenuButton, MenuItem, MenuList, Textarea } from "@chakra-ui/react";
+import { Box, Button, IconButton, Input, Menu, MenuButton, MenuItem, MenuList, Textarea } from "@chakra-ui/react";
 import { useState } from "react";
 import "../styles/CreateRoutineRow.css"
 import SetRepTable from "./SetRepTable";
@@ -28,6 +28,10 @@ export default function CreateRoutineRow({exercise, onDeleteRow} : any) {
 
     function handleRemoveExercise() {
         onDeleteRow();
+    }
+
+    function handleStartTimer() {
+        // TODO: implement
     }
 
 
@@ -76,6 +80,8 @@ export default function CreateRoutineRow({exercise, onDeleteRow} : any) {
                 <Box className="timer-dropdown">
                     <TimerDropdown/>
                 </Box>
+
+                <Button onClick={handleStartTimer}>Start Timer</Button>
             </Box>
 
             <SetRepTable></SetRepTable>

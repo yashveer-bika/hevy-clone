@@ -1,15 +1,16 @@
 import { Box, Button } from "@chakra-ui/react";
 import { useState } from "react";
-import Folder from "../components/Folder";
+import { useNavigate } from "react-router-dom";
 import RoutineCell from "../components/RoutineCell";
 
 import "../styles/LogPage.css"
 
 export default function LogPage() {
+    const navigate = useNavigate();
 
     // TODO:
     function handleStartEmptyWorkout() {
-
+        navigate("/logging/new-routine");
     }
     // TODO:
     function handleCreateNewFolder() {
