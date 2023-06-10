@@ -1,15 +1,15 @@
 {
   "files": {
     "main.css": "/hevy-clone/static/css/main.720351bd.css",
-    "main.js": "/hevy-clone/static/js/main.421dddf6.js",
+    "main.js": "/hevy-clone/static/js/main.5ff1d85f.js",
     "static/js/787.cda612ba.chunk.js": "/hevy-clone/static/js/787.cda612ba.chunk.js",
     "index.html": "/hevy-clone/index.html",
     "main.720351bd.css.map": "/hevy-clone/static/css/main.720351bd.css.map",
-    "main.421dddf6.js.map": "/hevy-clone/static/js/main.421dddf6.js.map",
+    "main.5ff1d85f.js.map": "/hevy-clone/static/js/main.5ff1d85f.js.map",
     "787.cda612ba.chunk.js.map": "/hevy-clone/static/js/787.cda612ba.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.720351bd.css",
-    "static/js/main.421dddf6.js"
+    "static/js/main.5ff1d85f.js"
   ]
 }
