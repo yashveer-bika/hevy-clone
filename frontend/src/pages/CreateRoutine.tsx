@@ -51,7 +51,7 @@ export default function CreateRoutine({editMode, id, mode} : any) {
         // connect routine to API
 
         // redirect back to /routines page
-        navigate("/routines");
+        navigate("/hevy-clone/routines");
     }
 
 

@@ -10,7 +10,7 @@ export default function LogPage() {
 
     // TODO:
     function handleStartEmptyWorkout() {
-        navigate("/logging/new-routine");
+        navigate("/hevy-clone/logging/new-routine");
     }
     // TODO:
     function handleCreateNewFolder() {

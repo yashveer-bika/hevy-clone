@@ -71,7 +71,7 @@ export default function ProfilePage() {
                     <p className="header-text"> Statistics </p>
                     <Plot data={{}}></Plot>
                     <p className="subheader-text">Dashboard</p>
-                    <Button onClick={() => navigate("/exercises")} justifyContent="left" variant="outline" backgroundColor="white">Exercises</Button>
+                    <Button onClick={() => navigate("/hevy-clone/exercises")} justifyContent="left" variant="outline" backgroundColor="white">Exercises</Button>
                 </Box>
             </Box>
         </Box>

@@ -1,5 +1,5 @@
 import { ChakraProvider } from "@chakra-ui/react";
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import { BrowserRouter as Router, Routes, Route, HashRouter } from 'react-router-dom';
 // import { Navbar, NavbarText, NavbarButton } from './styles';
 // import Home from './pages/FeedPage';
 import NotFoundPage from "./pages/NotFoundPage";
@@ -18,9 +18,10 @@ import LogPage from "./pages/LogPage";
 import LoggingPage from "./pages/LoggingPage";
 
 function App() {
+
   return (
     <ChakraProvider>
-      <Router>
+      <HashRouter>
         {/* <Navbar>
           <NavbarText fontSize="xl" fontWeight="bold">My Website</NavbarText>
           <Spacer />
@@ -33,33 +34,33 @@ function App() {
 
         <Routes>
           {/* <Route path="/" element={<Home></Home>}> </Route> */}
-          <Route path="/" element={<FeedPage/>}/>
-          <Route path="/routines" element={<RoutinesPage/>}/>
-          <Route path="/create-routine" element={<CreateRoutine editMode={false}/>}/>
-          <Route path="/routine-view" element={<RoutineViewPage/>}/>
-          <Route path="/edit-routine/:id" element={<CreateRoutine editMode={true}/>} />
-          <Route path="/exercises" element={<ExercisePage/>}/>
-          <Route path="/exercises/:id" element={<ExercisePage/>}/>
-          <Route path="/profile" element={<ProfilePage/>}/>
+          <Route path="/hevy-clone" element={<FeedPage/>}/>
+          <Route path="/hevy-clone/routines" element={<RoutinesPage/>}/>
+          <Route path="/hevy-clone/create-routine" element={<CreateRoutine editMode={false}/>}/>
+          <Route path="/hevy-clone/routine-view" element={<RoutineViewPage/>}/>
+          <Route path="/hevy-clone/edit-routine/:id" element={<CreateRoutine editMode={true}/>} />
+          <Route path="/hevy-clone/exercises" element={<ExercisePage/>}/>
+          <Route path="/hevy-clone/exercises/:id" element={<ExercisePage/>}/>
+          <Route path="/hevy-clone/profile" element={<ProfilePage/>}/>
 
-          <Route path="/settings" element={<SettingsPage/>}/>
+          <Route path="/hevy-clone/settings" element={<SettingsPage/>}/>
           
-          <Route path="/settings?profile" element={<SettingsPage/>}/>
-          <Route path="/settings?accounts" element={<SettingsPage/>}/>
-          <Route path="/settings?subscription" element={<SettingsPage/>}/>
-          <Route path="/settings?units" element={<SettingsPage/>}/>
-          <Route path="/settings?theme" element={<SettingsPage/>}/>
-          <Route path="/settings?export" element={<SettingsPage/>}/>
+          <Route path="/hevy-clone/settings?profile" element={<SettingsPage/>}/>
+          <Route path="/hevy-clone/settings?accounts" element={<SettingsPage/>}/>
+          <Route path="/hevy-clone/settings?subscription" element={<SettingsPage/>}/>
+          <Route path="/hevy-clone/settings?units" element={<SettingsPage/>}/>
+          <Route path="/hevy-clone/settings?theme" element={<SettingsPage/>}/>
+          <Route path="/hevy-clone/settings?export" element={<SettingsPage/>}/>
 
 
-          <Route path="/log" element={<LogPage />} />
+          <Route path="/hevy-clone/log" element={<LogPage />} />
           {/* TODO: set up better path logic */}
-          <Route path="/logging/routine-id/id" element={<LoggingPage />} />
-          <Route path="/logging/new-routine" element={<LoggingPage />} />
-          <Route path="*" element={<NotFoundPage></NotFoundPage>}/>
+          <Route path="/hevy-clone/logging/routine-id/id" element={<LoggingPage />} />
+          <Route path="/hevy-clone/logging/new-routine" element={<LoggingPage />} />
+          <Route path="/hevy-clone/*" element={<NotFoundPage></NotFoundPage>}/>
         </Routes>
 
-      </Router>
+      </HashRouter>
     </ChakraProvider>
   );
 }

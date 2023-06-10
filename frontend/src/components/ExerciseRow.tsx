@@ -15,7 +15,7 @@ export default function ExerciseRow({exercise, addToRoutine, addable, moveToExer
     
     function reroute() {
         if (moveToExercisePage) {
-            navigate(`/exercises/${exercise.id}`)
+            navigate(`/hevy-clone/exercises/${exercise.id}`)
         } else {
 
         }

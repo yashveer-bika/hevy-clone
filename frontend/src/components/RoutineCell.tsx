@@ -58,7 +58,7 @@ const RoutineCell = ({ routineLink, index, name, onDelete, onDuplicate, inLogVie
   // TODO: 
   function handleStartRoutine() {
     // redirect to logging/{routine-id}/{:id}
-    navigate(`/logging/routine-id/id`)
+    navigate(`/hevy-clone/logging/routine-id/id`)
 
 
   }

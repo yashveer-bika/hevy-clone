@@ -63,7 +63,7 @@ export default function RoutinesPage() {
       const handleAddRoutineToFolder = (folderId : number) => {
         // Go to Create Routine page
         // TODO: generate id for this new routine
-        navigate("/create-routine");
+        navigate("/hevy-clone/create-routine");
 
         // If I click the "Save Routine" button on the "Create Routine" page,
         // add a RoutineCell that links to the newly created routine under the folder
@@ -133,7 +133,7 @@ export default function RoutinesPage() {
 
   const handleNewRoutine = () => {
     // redirect to the create-routine page
-    navigate("/create-routine");
+    navigate("/hevy-clone/create-routine");
     
   }
     
